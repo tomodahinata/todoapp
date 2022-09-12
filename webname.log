@@ -5437,3 +5437,421 @@ net/http.(*conn).serve(0xc0000921e0, {0x7ff6d3dbda58, 0xc000075650})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:47 server.go:3197: http: panic serving [::1]:57700: template: public_navbar.html:6: unexpected {{end}}
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003cfd0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c000}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc00005f9e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c000?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc00019c000?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c000}, 0xc00013e100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000075740?}, {0x7ff60771d7d0, 0xc00019c000}, 0xc00013e100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061400, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:47 server.go:3197: http: panic serving [::1]:57701: template: public_navbar.html:6: unexpected {{end}}
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d130})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0001480e0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc00003f9e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0001480e0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc0001480e0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0001480e0}, 0xc00013e200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000075860?}, {0x7ff60771d7d0, 0xc0001480e0}, 0xc00013e200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000614a0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:47 server.go:3197: http: panic serving [::1]:57702: template: public_navbar.html:6: unexpected {{end}}
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a1d0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c0e0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0001a59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c0e0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc00019c0e0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c0e0}, 0xc000184100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186390?}, {0x7ff60771d7d0, 0xc00019c0e0}, 0xc000184100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8000, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:48 server.go:3197: http: panic serving [::1]:57704: template: public_navbar.html:6: unexpected {{end}}
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a340})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c1c0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0001a59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c1c0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc00019c1c0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c1c0}, 0xc000184400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001869f0?}, {0x7ff60771d7d0, 0xc00019c1c0}, 0xc000184400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8140, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:48 server.go:3197: http: panic serving [::1]:57703: template: public_navbar.html:6: unexpected {{end}}
+goroutine 24 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d280})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0001481c0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0001a79e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0001481c0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc0001481c0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0001481c0}, 0xc000184300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186930?}, {0x7ff60771d7d0, 0xc0001481c0}, 0xc000184300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c80a0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:48 server.go:3197: http: panic serving [::1]:57705: template: public_navbar.html:6: unexpected {{end}}
+goroutine 16 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d3e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0001482a0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0002859e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0001482a0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc0001482a0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0001482a0}, 0xc00013e600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000228480?}, {0x7ff60771d7d0, 0xc0001482a0}, 0xc00013e600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061540, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:49 server.go:3197: http: panic serving [::1]:57706: template: public_navbar.html:6: unexpected {{end}}
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d540})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc000148380}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0001a79e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc000148380?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc000148380?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc000148380}, 0xc00013e900)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000228a20?}, {0x7ff60771d7d0, 0xc000148380}, 0xc00013e900)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000615e0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:50 server.go:3197: http: panic serving [::1]:57707: template: public_navbar.html:6: unexpected {{end}}
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00008e160})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0000b0000}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0001a59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0000b0000?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc0000b0000?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0000b0000}, 0xc000184600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186fc0?}, {0x7ff60771d7d0, 0xc0000b0000}, 0xc000184600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c81e0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:50 server.go:3197: http: panic serving [::1]:57708: template: public_navbar.html:6: unexpected {{end}}
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d6a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc000148460}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0002819e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc000148460?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc000148460?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc000148460}, 0xc00013eb00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000228fc0?}, {0x7ff60771d7d0, 0xc000148460}, 0xc00013eb00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061680, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:50 server.go:3197: http: panic serving [::1]:57709: template: public_navbar.html:6: unexpected {{end}}
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a4b0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c2a0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c2a0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc00019c2a0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c2a0}, 0xc000184700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000187080?}, {0x7ff60771d7d0, 0xc00019c2a0}, 0xc000184700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8280, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:55 server.go:3197: http: panic serving [::1]:57710: template: public_navbar.html:6: unexpected {{end}}
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00008e2b0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0000b00e0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000419e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0000b00e0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc0000b00e0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0000b00e0}, 0xc000184900)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000187620?}, {0x7ff60771d7d0, 0xc0000b00e0}, 0xc000184900)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8320, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:55 server.go:3197: http: panic serving [::1]:57711: template: public_navbar.html:6: unexpected {{end}}
+goroutine 67 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00008e400})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0000b01c0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0002879e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0000b01c0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc0000b01c0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0000b01c0}, 0xc000184a00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001876e0?}, {0x7ff60771d7d0, 0xc0000b01c0}, 0xc000184a00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c83c0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:11:55 server.go:3197: http: panic serving [::1]:57712: template: public_navbar.html:6: unexpected {{end}}
+goroutine 68 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a630})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c380}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c380?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc00019c380?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c380}, 0xc000184b00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001877d0?}, {0x7ff60771d7d0, 0xc00019c380}, 0xc000184b00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8460, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:12:25 server.go:3197: http: panic serving [::1]:57718: template: public_navbar.html:6: unexpected {{end}}
+goroutine 72 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a790})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c460}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b79e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c460?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc00019c460?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c460}, 0xc000184c00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000187d70?}, {0x7ff60771d7d0, 0xc00019c460}, 0xc000184c00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8500, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:12:25 server.go:3197: http: panic serving [::1]:57719: template: public_navbar.html:6: unexpected {{end}}
+goroutine 45 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019a8e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c540}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0002819e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c540?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc00019c540?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c540}, 0xc00013ed00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002295c0?}, {0x7ff60771d7d0, 0xc00019c540}, 0xc00013ed00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061720, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:12:25 server.go:3197: http: panic serving [::1]:57720: template: public_navbar.html:6: unexpected {{end}}
+goroutine 79 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00019aa40})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc00019c620}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b79e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc00019c620?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc00019c620?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc00019c620}, 0xc000184d00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002e4840?}, {0x7ff60771d7d0, 0xc00019c620}, 0xc000184d00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c85a0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:13:25 server.go:3197: http: panic serving [::1]:57723: template: public_navbar.html:6: unexpected {{end}}
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00008e560})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc0000b02a0}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0002879e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc0000b02a0?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad7f18?, {0x7ff60771d7d0?, 0xc0000b02a0?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc0000b02a0}, 0xc00009e100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008b080?}, {0x7ff60771d7d0, 0xc0000b02a0}, 0xc00009e100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000380000, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:13:25 server.go:3197: http: panic serving [::1]:57724: template: public_navbar.html:6: unexpected {{end}}
+goroutine 83 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d800})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc000148540}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b79e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc000148540?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc000148540?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc000148540}, 0xc000184e00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002e4de0?}, {0x7ff60771d7d0, 0xc000148540}, 0xc000184e00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001c8640, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 14:13:25 server.go:3197: http: panic serving [::1]:57725: template: public_navbar.html:6: unexpected {{end}}
+goroutine 49 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6076254a0, 0xc00003d960})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff60771d7d0?, 0xc000148620}, {0x7ff607615f00, 0x7ff60771aeb0}, {0xc0000b59e0?, 0x3, 0x0?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:15 +0x106
+to-do-app/app/controllers.top({0x7ff60771d7d0?, 0xc000148620?}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:8 +0x97
+net/http.HandlerFunc.ServeHTTP(0x1f926ad8008?, {0x7ff60771d7d0?, 0xc000148620?}, 0x7ff60719e7c5?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff60771d7d0, 0xc000148620}, 0xc00013ee00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000229b60?}, {0x7ff60771d7d0, 0xc000148620}, 0xc00013ee00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000617c0, {0x7ff60771da58, 0xc000075650})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
