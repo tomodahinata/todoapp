@@ -5855,3 +5855,9 @@ net/http.(*conn).serve(0xc0000617c0, {0x7ff60771da58, 0xc000075650})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/12 17:52:08 users.go:139: no such table: sessios
+2022/09/12 17:53:02 users.go:139: no such table: sessios
+2022/09/14 13:03:37 route_auth.go:47: sql: no rows in result set
+2022/09/14 13:03:37 server.go:3197: http: superfluous response.WriteHeader call from to-do-app/app/controllers.authenticate (route_auth.go:63)
+2022/09/14 13:14:05 route_auth.go:47: sql: no rows in result set
+2022/09/14 13:14:05 server.go:3197: http: superfluous response.WriteHeader call from to-do-app/app/controllers.authenticate (route_auth.go:63)
