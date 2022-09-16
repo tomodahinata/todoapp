@@ -5861,3 +5861,37 @@ created by net/http.(*Server).Serve
 2022/09/14 13:03:37 server.go:3197: http: superfluous response.WriteHeader call from to-do-app/app/controllers.authenticate (route_auth.go:63)
 2022/09/14 13:14:05 route_auth.go:47: sql: no rows in result set
 2022/09/14 13:14:05 server.go:3197: http: superfluous response.WriteHeader call from to-do-app/app/controllers.authenticate (route_auth.go:63)
+2022/09/14 16:24:59 route_main.go:109: sql: no rows in result set
+2022/09/14 16:25:00 route_main.go:109: sql: no rows in result set
+2022/09/14 18:52:16 todos.go:82: sql: expected 5 destination arguments in Scan, not 4
+2022/09/14 18:52:43 todos.go:82: sql: expected 5 destination arguments in Scan, not 4
+2022/09/14 18:53:55 todos.go:83: sql: Scan error on column index 2, name "title": converting NULL to string is unsupported
+2022/09/16 13:31:03 todos.go:27: table todos has no column named deadline
+2022/09/16 13:33:11 todos.go:27: table todos has no column named deadline
+2022/09/16 13:37:12 todos.go:27: table todos has no column named deadline
+2022/09/16 13:42:20 todos.go:27: 4 values for 5 columns
+2022/09/16 14:12:07 route_main.go:27: []
+2022/09/16 14:12:08 route_main.go:27: []
+2022/09/16 14:12:10 route_main.go:27: []
+2022/09/16 14:12:10 route_main.go:27: []
+2022/09/16 14:14:52 route_main.go:27: []
+2022/09/16 14:14:52 route_main.go:27: []
+2022/09/16 14:14:55 route_main.go:27: []
+2022/09/16 14:14:56 route_main.go:27: []
+2022/09/16 14:15:03 route_main.go:27: []
+2022/09/16 14:15:17 route_main.go:27: []
+2022/09/16 14:15:17 route_main.go:27: []
+2022/09/16 14:16:40 todos.go:81: 1
+2022/09/16 14:16:40 route_main.go:27: []
+2022/09/16 14:16:41 todos.go:81: 1
+2022/09/16 14:16:41 route_main.go:27: []
+2022/09/16 14:17:33 todos.go:81: 1
+2022/09/16 14:17:33 route_main.go:27: []
+2022/09/16 14:17:33 todos.go:81: 1
+2022/09/16 14:17:33 route_main.go:27: []
+2022/09/16 14:20:41 todos.go:81: 1
+2022/09/16 14:20:41 route_main.go:27: []
+2022/09/16 14:20:49 todos.go:81: 1
+2022/09/16 14:20:49 route_main.go:27: []
+2022/09/16 14:20:49 todos.go:81: 1
+2022/09/16 14:20:49 route_main.go:27: []

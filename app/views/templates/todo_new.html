@@ -2,7 +2,13 @@
 <form role="form" action="/todos/save" method="post">
     <div class="lead">TodosCreate</div>
     <div class="form-group">
+        <!--タイトル更新-->
+        <input class="form-control" name="title" id="title" placeholder="タイトルを追加" ></input>
+        
+
       <textarea class="form-control" name="content" id="content" placeholder="Todoを追加" rows="4"></textarea>
+      <input class="form-control" name="deadline" id="deadline" type="date"></input>
+      
       <br/>
       <br/>
       <button class="btn btn-lg btn-primary pull-right" type="submit">作成</button>

@@ -6,19 +6,25 @@ import (
 )
 
 type Todo struct {
-	ID        int
-	Content   string
+	ID      int
+	Content string
+	Title   string
+	// 期日更新
+	Deadline  string
+	Time      int
 	UserID    int
 	CreatedAt time.Time
 }
 
-func (u *User) CreateTodo(content string) (err error) {
+func (u *User) CreateTodo(content string, title string, deadline string) (err error) {
 	cmd := `insert into todos(
 	content,
+	title,
+	deadline,
 	user_id,
-	created_at) values(?,?,?)`
+	created_at) values(?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd, content, u.ID, time.Now())
+	_, err = Db.Exec(cmd, content, title, u.ID, deadline, time.Now())
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -26,8 +32,8 @@ func (u *User) CreateTodo(content string) (err error) {
 }
 
 func GetTodo(id int) (todo Todo, err error) {
-	cmd := `select id,content,user_id,created_at from todos
-	where id=?`
+	cmd := `SELECT id,content,user_id,created_at FROM todos
+	WHERE id=?`
 	todo = Todo{}
 
 	err = Db.QueryRow(cmd, id).Scan(
@@ -40,7 +46,7 @@ func GetTodo(id int) (todo Todo, err error) {
 }
 
 func GetTodos() (todos []Todo, err error) {
-	cmd := `select id,content,user_id,created_at from todos`
+	cmd := `SELECT id,content,user_id,created_at FROM todos`
 	rows, err := Db.Query(cmd)
 	if err != nil {
 		log.Fatalln(err)
@@ -49,6 +55,9 @@ func GetTodos() (todos []Todo, err error) {
 		var todo Todo
 		err = rows.Scan(&todo.ID,
 			&todo.Content,
+			&todo.Title,
+			// 期日更新
+			&todo.Deadline,
 			&todo.UserID,
 			&todo.CreatedAt)
 		if err != nil {
@@ -61,8 +70,15 @@ func GetTodos() (todos []Todo, err error) {
 	return todos, err
 }
 func (u *User) GetTodosByUser() (todos []Todo, err error) {
-	cmd := `select id,content,user_id,created_at from todos
-	where user_id=?`
+	cmd := `
+		SELECT 
+			id, content, title, deadline, user_id, created_at 
+		FROM 
+			todos
+		WHERE 
+			user_id=?
+	`
+	log.Println(u.ID)
 	rows, err := Db.Query(cmd, u.ID)
 	if err != nil {
 		log.Fatalln(err)
@@ -72,6 +88,8 @@ func (u *User) GetTodosByUser() (todos []Todo, err error) {
 		err = rows.Scan(
 			&todo.ID,
 			&todo.Content,
+			&todo.Title,
+			&todo.Deadline,
 			&todo.UserID,
 			&todo.CreatedAt)
 
@@ -86,9 +104,9 @@ func (u *User) GetTodosByUser() (todos []Todo, err error) {
 }
 
 func (t *Todo) UpdateTodo() error {
-	cmd := `update todos set content =?,user_id=?
-	where id=?`
-	_, err = Db.Exec(cmd, t.Content, t.UserID, t.ID)
+	cmd := `update todos set content =?,user_id=?,title =?
+	WHERE id=?`
+	_, err = Db.Exec(cmd, t.Content, t.UserID, t.Title, t.ID /*title更新*/)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -96,7 +114,7 @@ func (t *Todo) UpdateTodo() error {
 }
 
 func (t *Todo) DeleteTodo() error {
-	cmd := `delete from todos where id=?`
+	cmd := `delete FROM todos WHERE id=?`
 	_, err = Db.Exec(cmd, t.ID)
 	if err != nil {
 		log.Fatalln(err)

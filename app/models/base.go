@@ -41,6 +41,8 @@ func init() {
 	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		content TEXT,
+		title TEXT,
+		deadline TEXT,
 		user_id INTEGER,
 		created_at DATETIME)`, tableNameTodo)
 	Db.Exec(cmdT)
