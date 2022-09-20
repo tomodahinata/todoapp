@@ -143,8 +143,13 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 }
 func (sess *Session) GetUserBySession() (user User, err error) {
 	user = User{}
-	cmd := `select id,uuid,name,email,created_at FROM users
-	where id =?`
+	cmd := `
+			select id,uuid,name,email,created_at 
+		FROM 
+			users
+		WHERE 
+			id =?
+	`
 	err = Db.QueryRow(cmd, sess.UserID).Scan(
 		&user.ID,
 		&user.UUID,

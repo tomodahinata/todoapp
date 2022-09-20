@@ -5,8 +5,14 @@
     <div class="lead">TodosUpdate</div>
     <div class="form-group">
         <!--タイトル更新-->
-      <textarea class="form-control" name="title" id="title" placeholder="タイトルを更新" rows="4">{{.Content}}</textarea>
+        <input class="form-control" name="title" id="title" placeholder="タイトルを更新" >{{ .Title }}
+        <select name="category" id="category">
+            <option value="ワーク">ワーク</option>
+            <option value="プライベート">プライベート</option>
+            <option value="スタディ">スタディ</option>
+            </select>      
       <textarea class="form-control" name="content" id="content" placeholder="Todoを更新" rows="4">{{.Content}}</textarea>
+      <input class="form-control" name="deadline" id="deadline" type="date">
       <br/>
       <br/>
       <button class="btn btn-lg btn-primary pull-right" type="submit">更新</button>

@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -15,6 +16,7 @@ func genereateHTML(w http.ResponseWriter, data interface{}, filenames ...string)
 	for _, file := range filenames {
 		files = append(files, fmt.Sprintf("app/views/templates/%s.html", file))
 	}
+	log.Println(files)
 	templates := template.Must(template.ParseFiles(files...))
 	templates.ExecuteTemplate(w, "layout", data)
 }
@@ -62,6 +64,7 @@ func StarMainSerever() error {
 	http.HandleFunc("/todos/save", todoSave)
 	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
-	http.HandleFunc("/todos/delete/",parseURL(todoDelete))
+	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
+	http.HandleFunc("/todos/sort", todoSort)
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }

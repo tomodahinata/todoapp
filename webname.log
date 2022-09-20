@@ -5895,3 +5895,312 @@ created by net/http.(*Server).Serve
 2022/09/16 14:20:49 route_main.go:27: []
 2022/09/16 14:20:49 todos.go:81: 1
 2022/09/16 14:20:49 route_main.go:27: []
+2022/09/16 16:04:22 todos.go:29: 5 values for 6 columns
+2022/09/16 16:14:14 todos.go:105: sql: Scan error on column index 3, name "category": converting NULL to string is unsupported
+2022/09/16 16:33:36 todos.go:97: near "[DESC]": syntax error
+2022/09/16 16:34:04 todos.go:97: near "[DESC]": syntax error
+2022/09/16 16:35:51 todos.go:97: near "[DESC]": syntax error
+2022/09/20 16:40:49 todos.go:240: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 16:42:33 todos.go:240: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 16:43:50 todos.go:240: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 16:58:05 todos.go:240: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 17:05:27 todos.go:227: 
+2022/09/20 17:05:28 todos.go:228: 1
+2022/09/20 17:05:28 todos.go:229: &{0xc00013c000 0x7ff7ea253940 0xc000048300 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:05:28 todos.go:242: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 17:08:56 todos.go:151: 
+2022/09/20 17:08:56 todos.go:227: 
+2022/09/20 17:08:56 todos.go:228: 1
+2022/09/20 17:08:56 todos.go:229: &{0xc000134000 0x7ff6871c3940 0xc0001262a0 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:08:56 todos.go:242: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 17:09:43 todos.go:151: 
+2022/09/20 17:09:43 todos.go:227: 
+2022/09/20 17:09:43 todos.go:228: 1
+2022/09/20 17:09:43 todos.go:229: &{0xc000194000 0x7ff601323940 0xc0000881e0 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:09:43 todos.go:242: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 17:13:48 route_main.go:142: 
+2022/09/20 17:13:48 todos.go:151: 
+2022/09/20 17:13:48 todos.go:227: 
+2022/09/20 17:13:48 todos.go:228: 1
+2022/09/20 17:13:48 todos.go:229: &{0xc00013e000 0x7ff7c31e3940 0xc000048300 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:13:48 todos.go:242: sql: expected 0 destination arguments in Scan, not 7
+2022/09/20 17:14:36 route_main.go:142: 
+2022/09/20 17:14:36 todos.go:151: id昇順
+2022/09/20 17:14:36 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY created_at ASC
+			
+	
+2022/09/20 17:14:36 todos.go:228: 1
+2022/09/20 17:14:36 todos.go:229: &{0xc00013e000 0x7ff78cd43940 0xc000049020 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:14:36 server.go:3197: http: panic serving [::1]:55941: open app/views/templates//todos/sort.html: The system cannot find the path specified.
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff78cf4f1c0, 0xc00020b770})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff78d0374b0?, 0xc00014e620}, {0x7ff78cf88de0, 0xc00019c200}, {0xc00005f870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff78d0374b0, 0xc00014e620}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:150 +0x385
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x7ff78d0374b0?, 0xc00014e620?}, 0xc000123030?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff78d0374b0, 0xc00014e620}, 0xc00019c200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff78d036828?}, {0x7ff78d0374b0, 0xc00014e620}, 0xc00019c200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061540, {0x7ff78d037738, 0xc000075740})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:14:36 route_main.go:142: 
+2022/09/20 17:14:36 todos.go:151: id昇順
+2022/09/20 17:14:36 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY created_at ASC
+			
+	
+2022/09/20 17:14:36 todos.go:228: 1
+2022/09/20 17:14:36 todos.go:229: &{0xc00013e000 0x7ff78cd43940 0xc0000491a0 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:14:36 server.go:3197: http: panic serving [::1]:55942: open app/views/templates//todos/sort.html: The system cannot find the path specified.
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff78cf4f1c0, 0xc00020bb90})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff78d0374b0?, 0xc00014e7e0}, {0x7ff78cf88de0, 0xc000090100}, {0xc00005f870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff78d0374b0, 0xc00014e7e0}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:150 +0x385
+net/http.HandlerFunc.ServeHTTP(0x7ff78cf2d620?, {0x7ff78d0374b0?, 0xc00014e7e0?}, 0xc000123450?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff78d0374b0, 0xc00014e7e0}, 0xc000090100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff78d036828?}, {0x7ff78d0374b0, 0xc00014e7e0}, 0xc000090100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000061860, {0x7ff78d037738, 0xc000075740})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:23:56 todos.go:151: id降順
+2022/09/20 17:23:56 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY created_at DESC
+			
+	
+2022/09/20 17:23:56 todos.go:228: 1
+2022/09/20 17:23:56 todos.go:229: &{0xc000194000 0x7ff6be643940 0xc000186a20 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:24:11 todos.go:151: id降順
+2022/09/20 17:24:11 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY created_at DESC
+			
+	
+2022/09/20 17:24:11 todos.go:228: 1
+2022/09/20 17:24:11 todos.go:229: &{0xc000194000 0x7ff6be643940 0xc00005ca80 <nil> <nil> {{0 0} 0 0 0 0} false <nil> []}
+2022/09/20 17:25:17 todos.go:151: id降順
+2022/09/20 17:28:13 todos.go:151: id昇順
+2022/09/20 17:28:54 todos.go:227: 
+2022/09/20 17:33:16 todos.go:227: 
+2022/09/20 17:33:22 todos.go:227: 
+2022/09/20 17:33:42 todos.go:227: 
+2022/09/20 17:35:35 todos.go:227: 
+2022/09/20 17:45:37 todos.go:227: 
+2022/09/20 17:45:37 server.go:3197: http: panic serving [::1]:56172: open app/views/templates/todo/sort.html: The system cannot find the path specified.
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff636d5f1c0, 0xc0001e81e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff636e47470?, 0xc0001a62a0}, {0x7ff636d98de0, 0xc0001dc100}, {0xc0000a1870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff636e47470, 0xc0001a62a0}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:149 +0x378
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x7ff636e47470?, 0xc0001a62a0?}, 0xc0001b0620?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff636e47470, 0xc0001a62a0}, 0xc0001dc100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff636e467e8?}, {0x7ff636e47470, 0xc0001a62a0}, 0xc0001dc100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a3540, {0x7ff636e476f8, 0xc0000c3710})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:45:37 todos.go:227: 
+2022/09/20 17:45:37 server.go:3197: http: panic serving [::1]:56173: open app/views/templates/todo/sort.html: The system cannot find the path specified.
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff636d5f1c0, 0xc00013a5a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff636e47470?, 0xc0001262a0}, {0x7ff636d98de0, 0xc000062400}, {0xc00009d870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff636e47470, 0xc0001262a0}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:149 +0x378
+net/http.HandlerFunc.ServeHTTP(0x7ff636d3d620?, {0x7ff636e47470?, 0xc0001262a0?}, 0xc0000fa780?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff636e47470, 0xc0001262a0}, 0xc000062400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff636e467e8?}, {0x7ff636e47470, 0xc0001262a0}, 0xc000062400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001de140, {0x7ff636e476f8, 0xc0000c3710})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:46:42 todos.go:227: 
+2022/09/20 17:46:42 server.go:3197: http: panic serving [::1]:56183: open app/views/templates/todos/sort.html: The system cannot find the path specified.
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6e81af1c0, 0xc00016f500})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff6e8297470?, 0xc00014e380}, {0x7ff6e81e8de0, 0xc000136400}, {0xc00005f870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff6e8297470, 0xc00014e380}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:149 +0x378
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x7ff6e8297470?, 0xc00014e380?}, 0xc000122a90?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff6e8297470, 0xc00014e380}, 0xc000136400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff6e82967e8?}, {0x7ff6e8297470, 0xc00014e380}, 0xc000136400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000615e0, {0x7ff6e82976f8, 0xc000075740})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:46:42 todos.go:227: 
+2022/09/20 17:46:42 server.go:3197: http: panic serving [::1]:56184: open app/views/templates/todos/sort.html: The system cannot find the path specified.
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff6e81af1c0, 0xc000186930})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+to-do-app/app/controllers.genereateHTML({0x7ff6e8297470?, 0xc0001c0000}, {0x7ff6e81e8de0, 0xc000136600}, {0xc00005b870?, 0x2, 0xe?})
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/server.go:18 +0x106
+to-do-app/app/controllers.todoSort({0x7ff6e8297470, 0xc0001c0000}, 0x0?)
+	C:/Users/user/Downloads/Go/todoapp/app/controllers/route_main.go:149 +0x378
+net/http.HandlerFunc.ServeHTTP(0x203e189ba90?, {0x7ff6e8297470?, 0xc0001c0000?}, 0xc0001b60c0?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff6e8297470, 0xc0001c0000}, 0xc000136600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x7ff6e82967e8?}, {0x7ff6e8297470, 0xc0001c0000}, 0xc000136600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a2000, {0x7ff6e82976f8, 0xc000075740})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2022/09/20 17:48:52 todos.go:227: 
+2022/09/20 17:49:03 todos.go:227: 
+2022/09/20 17:49:07 todos.go:227: 
+2022/09/20 17:51:48 todos.go:227: 
+2022/09/20 17:51:53 todos.go:227: 
+2022/09/20 17:53:17 todos.go:227: 
+2022/09/20 17:53:22 todos.go:227: 
+2022/09/20 17:56:30 todos.go:227: <nil>
+2022/09/20 17:57:14 todos.go:227: <nil>
+2022/09/20 17:57:22 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY deadline ASC
+			
+	
+2022/09/20 17:57:23 todos.go:228: 1
+2022/09/20 17:57:23 todos.go:229: <nil>
+2022/09/20 17:57:24 todos.go:227: 
+		SELECT 
+			id, 
+			content, 
+			title,
+			category, 
+			deadline, 
+			user_id, 
+			created_at 
+		FROM 
+			todos
+		WHERE
+			user_id=?
+		ORDER BY deadline ASC
+			
+	
+2022/09/20 17:57:24 todos.go:228: 1
+2022/09/20 17:57:24 todos.go:229: <nil>
+2022/09/20 17:58:06 todos.go:151: 期限昇順
+2022/09/20 18:02:08 todos.go:151: 期限昇順
+2022/09/20 18:02:22 todos.go:151: 期限昇順
+2022/09/20 18:05:18 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:05:18 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:05:21 server.go:19: [app/views/templates/layout.html app/views/templates/todos_sort.html app/views/templates/index.html]
+2022/09/20 18:05:21 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:30 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:35 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:35 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:36 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:36 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]
+2022/09/20 18:06:42 server.go:19: [app/views/templates/layout.html app/views/templates/todos_sort.html app/views/templates/index.html]
+2022/09/20 18:06:42 server.go:19: [app/views/templates/layout.html app/views/templates/private_navbar.html app/views/templates/index.html]

@@ -43,6 +43,7 @@ func init() {
 		content TEXT,
 		title TEXT,
 		deadline TEXT,
+		category TEXT,
 		user_id INTEGER,
 		created_at DATETIME)`, tableNameTodo)
 	Db.Exec(cmdT)

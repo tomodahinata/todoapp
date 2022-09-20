@@ -24,7 +24,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 		todos, _ := user.GetTodosByUser()
-		log.Println(todos)
 		user.Todos = todos
 		genereateHTML(w, user, "layout", "private_navbar", "index")
 	}
@@ -54,10 +53,10 @@ func todoSave(w http.ResponseWriter, r *http.Request) {
 		content := r.PostFormValue("content")
 		title := r.PostFormValue("title")
 		deadline := r.PostFormValue("deadline")
-		if err := user.CreateTodo(content, title, deadline); err != nil {
+		category := r.PostFormValue("category")
+		if err := user.CreateTodo(content, title, deadline, category); err != nil {
 			log.Println(err)
 		}
-		// タイトル更新
 
 		http.Redirect(w, r, "/todos", http.StatusFound)
 
@@ -95,7 +94,9 @@ func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
 		}
 		content := r.PostFormValue("content")
 		title := r.PostFormValue("title")
-		t := &models.Todo{ID: id, Content: content, UserID: user.ID, Title: title}
+		category := r.PostFormValue("category")
+		deadline := r.PostFormValue("deadline")
+		t := &models.Todo{ID: id, Content: content, UserID: user.ID, Deadline: deadline, Title: title, Category: category}
 		if err := t.UpdateTodo(); err != nil {
 			log.Println(err)
 		}
@@ -123,3 +124,89 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 		http.Redirect(w, r, "/todos", http.StatusFound)
 	}
 }
+
+func todoSort(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+
+		err = r.ParseForm()
+		if err != nil {
+			log.Println(err)
+		}
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		choice := r.PostFormValue("choice")
+		todos, err := user.GetTodosSort(choice)
+		if err != nil {
+			log.Println(err)
+		}
+
+		user.Todos = todos
+		genereateHTML(w, user, "layout", "todos_sort", "index")
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
