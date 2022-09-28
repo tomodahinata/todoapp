@@ -1,0 +1,11 @@
+{{define "content"}}
+    {{range .Chats}}
+        <div>{{ .Chat}}</div>
+    {{end}}
+    <form role="form" action="/todos/chat_save" method="post">
+
+    <div class="lead">Chat</div>
+    <textarea class="form-control" name="chat" id="chat" placeholder="Chatを追加" rows="4"></textarea>
+    <button class="btn btn-lg btn-primary pull-right" type="submit">作成</button>
+    </form>
+{{end}}

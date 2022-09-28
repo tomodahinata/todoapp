@@ -5,8 +5,8 @@ UserName:{{.Name}}
 <p>[<a href="/todos/new">Create</a>]</p>
 <form  role="form" action="/todos/sort" method="post">
 <select name="choice" id="choice">
-    <option value="id昇順">id昇順</option>
-    <option value="id降順">id降順</option>
+    <option value="id昇順">作成昇順</option>
+    <option value="id降順">作成降順</option>
     <option value="期限昇順">期限昇順</option>
     <option value="期限降順">期限降順</option>
 </select>
@@ -18,6 +18,7 @@ UserName:{{.Name}}
 <div>{{ .Category }}</div>
 <div>{{ .Content }}</div>   
 <div>{{ .Deadline }}</div>
+<div>{{.CreatedAt}}</div>
 <p>[<a href="/todos/edit/{{.ID}}">Edit</a>]</p>
 <p>[<a href="/todos/delete/{{.ID}}">Delete</a>]</p>
 <hr>

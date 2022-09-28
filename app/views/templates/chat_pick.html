@@ -1,0 +1,8 @@
+{{define "content"}}
+    <form role="form" action="/todos/chat_create" method="post">
+        <div class="lead">Select</div>
+        <input class="form-control" name="pick" id="pick" placeholder="ユーザーIDを入力">
+        <input class="form-control" name="group_name" id="group_name" placeholder="グループ名を作成">
+        <button class="btn btn-lg btn-primary pull-right" type="submit">選択</button>
+    </form>
+{{end}}

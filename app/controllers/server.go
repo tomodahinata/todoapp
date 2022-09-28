@@ -3,7 +3,6 @@ package controllers
 import (
 	"fmt"
 	"html/template"
-	"log"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -16,7 +15,6 @@ func genereateHTML(w http.ResponseWriter, data interface{}, filenames ...string)
 	for _, file := range filenames {
 		files = append(files, fmt.Sprintf("app/views/templates/%s.html", file))
 	}
-	log.Println(files)
 	templates := template.Must(template.ParseFiles(files...))
 	templates.ExecuteTemplate(w, "layout", data)
 }
@@ -66,5 +64,12 @@ func StarMainSerever() error {
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 	http.HandleFunc("/todos/sort", todoSort)
+	http.HandleFunc("/todos/chat_new", todoChatNew)
+	http.HandleFunc("/todos/chat_save", todoChatSave)
+	http.HandleFunc("/todos/chat_pick", todoChatPick)
+	http.HandleFunc("/todos/chat_create", todoChatCreate)
+	http.HandleFunc("/todos/chat_grouplist", todoChatGroupList)
+	http.HandleFunc("/todos/chat_group/",parseURL(todoChatGroup))
+	http.HandleFunc("/todos/chat_groupback",parseURL(todoChatGroupBack))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }

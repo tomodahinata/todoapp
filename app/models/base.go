@@ -21,6 +21,8 @@ const (
 	tableNameUser    = "users"
 	tableNameTodo    = "todos"
 	tableNameSession = "sessions"
+	tableNameChat    = "chats"
+	tableChatPick    = "picks"
 )
 
 func init() {
@@ -55,6 +57,21 @@ func init() {
 		user_id INTEGER,
 		created_at DATETIME)`, tableNameSession)
 	Db.Exec(cmdS)
+
+	cmdO := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		chat STRING,
+		user_id INTEGER,
+		created_at DATETIME)`, tableNameChat)
+	Db.Exec(cmdO)
+
+	cmdP := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		group_name INTEGER,
+		user1_id INTEGER,
+		user2_id INTEGER,
+		created_at DATETIME)`, tableChatPick)
+	Db.Exec(cmdP)
 }
 
 func createUUID() (uuidobj uuid.UUID) {

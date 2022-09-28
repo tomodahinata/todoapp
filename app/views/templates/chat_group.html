@@ -1,0 +1,13 @@
+{{define "content"}}
+<div>{{ .Group_name}}</div>
+  {{range .Picks}}
+    <div id="block">
+      <h3>{{ .User2ID}}</h3>
+      <p>内容</p>
+    </div>
+  {{end}}
+  <form role="form" action="/todos/chat_groupback" method="post">
+    <textarea class="form-control" name="chat" id="chat" placeholder="Messageを入力" rows="4"></textarea>
+    <button class="btn btn-lg btn-primary pull-right" type="submit">送信</button>
+  </form>
+{{end}}

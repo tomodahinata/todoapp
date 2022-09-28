@@ -146,67 +146,126 @@ func todoSort(w http.ResponseWriter, r *http.Request) {
 		}
 
 		user.Todos = todos
-		genereateHTML(w, user, "layout", "todos_sort", "index")
+		genereateHTML(w, user, "layout", "private_navbar", "index")
 	}
 }
 
+func todoChatNew(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		chats, _ := user.GetChatsByUser()
+		user.Chats = chats
+		genereateHTML(w, user, "layout", "private_navbar", "chat_new")
+	}
+}
 
+func todoChatSave(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		err = r.ParseForm()
+		if err != nil {
+			log.Println(err)
+		}
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		chat := r.PostFormValue("chat")
+		if err := user.ChatTodo(chat); err != nil {
+			log.Println(err)
+		}
+		http.Redirect(w, r, "/todos/chat_new", http.StatusFound)
+	}
+}
 
+func todoChatPick(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		picks, _ := user.GetPicksByUser()
+		user.Picks = picks
+		genereateHTML(w, user, "layout", "private_navbar", "chat_pick")
+	}
+}
 
+func todoChatCreate(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		err = r.ParseForm()
+		if err != nil {
+			log.Println(err)
+		}
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		pick := r.PostFormValue("pick")
+		group_name := r.PostFormValue("group_name")
+		if err := user.PickTodo(pick, group_name); err != nil {
+			log.Println(err)
+		}
+		http.Redirect(w, r, "/todos/chat_grouplist", http.StatusFound)
+	}
+}
 
+func todoChatGroupList(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/", http.StatusFound)
+	} else {
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		picks, _ := user.GetPicksByUser()
+		user.Picks = picks
+		genereateHTML(w, user, "layout", "private_navbar", "chat_group")
+	}
+}
 
+func todoChatGroup(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/", http.StatusFound)
+	} else {
+		_, err := sess.GetUserBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		p, err := models.GetPick(id)
+		if err != nil {
+			log.Println(err)
+		}
+		log.Println(id)
+		// パスに含まれたID のグループとチャット一覧を取得
+		genereateHTML(w, p, "layout", "private_navbar", "chat_group")
+	}
+}
+func todoChatGroupBack(w http.ResponseWriter, r *http.Request, id int) {
+	_, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		err = r.ParseForm()
+		if err != nil {
+			log.Println(err)
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		http.Redirect(w, r, "/todos/chat_group", http.StatusFound)
+	}
+}

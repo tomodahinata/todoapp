@@ -1,0 +1,9 @@
+{{ define "content" }}
+<div>Group List</div>
+    {{range .Picks }}
+        <div>{{ .Group_name }}</div>
+        <p>[<a href="/todos/chat_group/{{.ID}}">Talk</a>]</p>
+
+
+    {{end}}
+{{end}}
